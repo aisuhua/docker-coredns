@@ -1,0 +1,10 @@
+.:53 {
+    log
+    errors
+    cache
+  
+    file db.ocp1.example.com ocp1.example.com
+
+    # PTR
+    file db.1.168.192 1.168.192.in-addr.arpa
+}

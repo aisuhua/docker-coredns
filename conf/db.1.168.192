@@ -1,0 +1,18 @@
+@	3600 IN	SOA example.com. example.com. (
+				2017042745 ; serial
+				7200       ; refresh (2 hours)
+				3600       ; retry (1 hour)
+				1209600    ; expire (2 weeks)
+				3600       ; minimum (1 hour)
+				)
+
+	3600 IN NS ns.example.com.
+
+10     IN PTR     api.ocp1.example.com.
+10     IN PTR     api-int.ocp1.example.com.
+20     IN PTR     master1.ocp1.example.com.
+21     IN PTR     master2.ocp1.example.com.
+22     IN PTR     master3.ocp1.exampe.com.
+30     IN PTR     worker1.ocp1.example.com.
+31     IN PTR     worker2.ocp1.example.com.
+32     IN PTR     worker3.ocp1.example.com.

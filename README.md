@@ -1,8 +1,8 @@
 # CoreDNS
 
-## Docker
+## 测试
 
-直接使用
+### Docker
 
 ```sh
 docker run --rm \
@@ -10,15 +10,24 @@ docker run --rm \
     -w /etc/coredns \
     -v $PWD/conf:/etc/coredns \
     -p 53:53/udp \
-    coredns/coredns:1.10.1 -conf /etc/coredns/Corefile
+    coredns/coredns:1.10.1 \
+    -conf /etc/coredns/Corefile
 ```
 
-构建成新的镜像再使用
+### Docker Compose
+
+```sh
+docker-compose up
+```
+
+## 生产
 
 ```sh
 docker build -t aisuhua/coredns:latest .
 docker run --rm -p 53:53/udp aisuhua/coredns:latest
 ```
+
+## 问题
 
 在 Ubuntu 下，如果 53 端口已被监听，可以绑定特定的 IP 解决
 
@@ -38,4 +47,4 @@ dig @127.0.0.1 master1.ocp1.example.com
 
 ```sh
 dig @127.0.0.1 -x 192.168.1.10
-``
+```

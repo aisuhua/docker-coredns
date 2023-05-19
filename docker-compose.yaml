@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  coredns:
+    image: coredns/coredns:1.10.1
+    restart: always
+    volumes: 
+      - $PWD/conf:/etc/coredns
+    working_dir: /etc/coredns
+    ports:
+      - '127.0.0.1:53:53/tcp'
+      - '127.0.0.1:53:53/udp'

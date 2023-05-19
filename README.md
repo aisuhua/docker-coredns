@@ -5,7 +5,12 @@
 直接使用
 
 ```sh
-docker run --rm --name coredns -w /etc/coredns -v $PWD/conf:/etc/coredns -p 53:53/udp coredns/coredns:1.10.1 -conf /etc/coredns/Corefile
+docker run --rm \
+    --name coredns \
+    -w /etc/coredns \
+    -v $PWD/conf:/etc/coredns \
+    -p 53:53/udp \
+    coredns/coredns:1.10.1 -conf /etc/coredns/Corefile
 ```
 
 构建成新的镜像再使用

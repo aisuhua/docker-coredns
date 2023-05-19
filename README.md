@@ -35,6 +35,12 @@ docker run --rm -p 53:53/udp aisuhua/coredns:latest
 docker run --rm -p 127.0.0.1:53:53/udp aisuhua/coredns:latest
 ```
 
+reload 配置
+
+```sh
+docker kill --signal="SIGUSR1" coredns-coredns-1
+```
+
 ## 测试
 
 DNS 解析

@@ -20,3 +20,17 @@ docker run --rm -p 53:53/udp aisuhua/coredns:latest
 ```sh
 docker run --rm -p 127.0.0.1:53:53/udp aisuhua/coredns:latest
 ```
+
+## 测试
+
+DNS 解析
+
+```sh
+dig @127.0.0.1 master1.ocp1.example.com
+```
+
+反向解析
+
+```sh
+dig @127.0.0.1 -x 192.168.1.10
+``

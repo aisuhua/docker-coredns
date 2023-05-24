@@ -1,30 +1,37 @@
 # CoreDNS
 
-## 测试
-
-### Docker
+## Clone 
 
 ```sh
-docker run --rm \
-    --name coredns \
-    -w /etc/coredns \
-    -v $PWD/conf:/etc/coredns \
-    -p 53:53/udp \
-    coredns/coredns:1.10.1 \
-    -conf /etc/coredns/Corefile
+git clone https://github.com/aisuhua/docker-coredns.git
+cd docker-coredns
 ```
 
-### Docker Compose
+## Docker
+
+```sh
+docker run --rm --name coredns -w /etc/coredns -v $PWD/conf:/etc/coredns -p 53:53/udp coredns/coredns:1.10.1 -conf /etc/coredns/Corefile
+```
+
+## Docker Compose
 
 ```sh
 docker-compose up
 ```
 
-## 生产
+## 构建一个新的镜像并运行
+
+Docker
 
 ```sh
 docker build -t aisuhua/coredns:latest .
 docker run --rm --name coredns -p 53:53/udp aisuhua/coredns:latest
+```
+
+Docker Compose
+
+```sh
+docker-compose -f docker-compose.prod.yaml build
 ```
 
 ## 问题

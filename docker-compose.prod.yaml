@@ -1,12 +1,11 @@
 version: '3'
+
 services:
   coredns:
-    image: coredns/coredns:1.10.1
+    build: .
+    image: aisuhua/coredns:latest
     container_name: coredns
     restart: always
-    volumes: 
-      - $PWD/conf:/etc/coredns
-    working_dir: /etc/coredns
     ports:
       - '127.0.0.1:53:53/tcp'
       - '127.0.0.1:53:53/udp'

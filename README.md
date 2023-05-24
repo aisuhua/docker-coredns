@@ -31,7 +31,7 @@ docker run --rm --name coredns -p 53:53/udp aisuhua/coredns:latest
 Docker Compose
 
 ```sh
-docker-compose -f docker-compose.prod.yaml build
+docker-compose -f docker-compose.prod.yaml up
 ```
 
 ## 问题
